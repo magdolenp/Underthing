@@ -1,11 +1,11 @@
 <div class="navigation-container">
-  <div class="menu-item">
-    <img
-      src="assets/dnd-logo.svg"
-      class="logo"
-    />
-  </div>
-  <div class="menu-item" *ngFor="let section of menuSections">
-    {{ section.name }}
+  <div class="navigation-menu">
+    <div class="menu-item">
+      <img src="assets/dnd-logo.svg" class="logo" />
+    </div>
+    <div class="menu-item" *ngFor="let section of menuSections">
+      <div class="label">{{ section.name }}</div>
+      <div class="line"></div>
+    </div>
   </div>
 </div>

@@ -1,16 +1,67 @@
+@import 'variables';
+
 $navigation-height: 80px;
-$logo-margin: 4px;
+$navigation-margin: 4px;
+$navigation-item-width: 160px;
+$navigation-line-height: 2px;
 
 .navigation-container {
+  display: flex;
+  justify-content: center;
   position: fixed;
   height: $navigation-height;
   width: 100%;
-  background-color: greenyellow;
+  background-color: $background-color;
 
-  .menu-item {
+  .navigation-menu {
+    display: flex;
+    align-items: center;
+
+    .menu-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      width: $navigation-item-width;
+      cursor: pointer;
+      font-size: $font-h1-size;
+      font-weight: 700;
+      transition: font-size $animation-time ease, color $animation-time ease;
+      user-select: none;
+
+      .label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: calc(#{$navigation-height} - #{$navigation-line-height});
+      }
+
+      .line {
+        height: $navigation-line-height;
+        width: 0;
+        background-color: $secondary-color;
+        transition: width $animation-time ease;
+      }
+
+      &:hover {
+        .label {
+          color: $secondary-color;
+          font-size: $font-h1-exp-size;
+        }
+
+        .line {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 
 .logo {
-  width: calc(#{$navigation-height} - #{$logo-margin} * 2);
+  width: calc(#{$navigation-height} - #{$navigation-margin} * 2);
+
+  &:hover {
+    filter: drop-shadow(0 2px 2px rgba($secondary-dark-color, 0.4));
+  }
 }

@@ -12,7 +12,10 @@ interface MenuSection {
 })
 export class NavigationComponent {
   readonly menuSections: MenuSection[] = [
-    { name: 'Calculators', section: 'calc' },
+    { name: 'Home', section: 'home' },
+    { name: 'Wiki', section: 'wiki' },
+    { name: 'Calculators', section: 'calculators' },
+    { name: 'Test', section: 'test' },
     { name: 'About', section: 'about' },
   ];
 

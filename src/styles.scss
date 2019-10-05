@@ -1,3 +1,6 @@
+@import 'variables';
+@import url('https://fonts.googleapis.com/css?family=Almendra');
+
 html,
 body {
   height: 100%;
@@ -5,6 +8,8 @@ body {
 }
 
 * {
+  font-family: $regular-font-family;
+  color: $font-color;
   margin: 0;
   padding: 0;
   outline: none;
