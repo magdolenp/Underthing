@@ -1,0 +1,10 @@
+$margin-size: 40px;
+
+.content-container {
+  height: 200%;
+  width: calc(100% - #{$margin-size})- #{$margin-size};
+  margin: $margin-size;
+  background-color: rgba(#404040, 0.4);
+  border-radius: 10px;
+  overflow-y: auto;
+}

@@ -1,0 +1,16 @@
+$navigation-height: 80px;
+$logo-margin: 4px;
+
+.navigation-container {
+  position: fixed;
+  height: $navigation-height;
+  width: 100%;
+  background-color: greenyellow;
+
+  .menu-item {
+  }
+}
+
+.logo {
+  width: calc(#{$navigation-height} - #{$logo-margin} * 2);
+}
