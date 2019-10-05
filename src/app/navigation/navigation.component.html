@@ -1,11 +1,16 @@
 <div class="navigation-container">
-  <div class="navigation-menu">
-    <div class="menu-item">
+  <ul class="navigation-menu" routerLinkActive="active">
+    <li class="menu-item">
       <img src="assets/dnd-logo.svg" class="logo" />
-    </div>
-    <div class="menu-item" *ngFor="let section of menuSections">
+    </li>
+    <li
+      class="menu-item"
+      *ngFor="let section of menuSections"
+      [routerLink]="section.link"
+      routerLinkActive="active-link"
+    >
       <div class="label">{{ section.name }}</div>
       <div class="line"></div>
-    </div>
-  </div>
+    </li>
+  </ul>
 </div>

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import {RoutePaths} from '../../app.utils';
 
 interface MenuSection {
   name: string;
-  section: string;
+  link: RoutePaths;
 }
 
 @Component({
@@ -12,11 +13,11 @@ interface MenuSection {
 })
 export class NavigationComponent {
   readonly menuSections: MenuSection[] = [
-    { name: 'Home', section: 'home' },
-    { name: 'Wiki', section: 'wiki' },
-    { name: 'Calculators', section: 'calculators' },
-    { name: 'Test', section: 'test' },
-    { name: 'About', section: 'about' },
+    { name: 'Home', link: RoutePaths.Home },
+    { name: 'World', link: RoutePaths.World },
+    { name: 'Calculators', link: RoutePaths.Calculators },
+    { name: 'Test', link: RoutePaths.Test },
+    { name: 'About', link: RoutePaths.About },
   ];
 
   constructor() {}

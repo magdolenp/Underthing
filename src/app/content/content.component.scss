@@ -1,10 +1,13 @@
+@import 'variables';
+
 $margin-size: 40px;
 
 .content-container {
-  height: 200%;
-  width: calc(100% - #{$margin-size})- #{$margin-size};
-  margin: $margin-size;
-  background-color: rgba(#404040, 0.4);
-  border-radius: 10px;
+  height: 100%;
+  width: 1300px;
+  background: url(~src/assets/border.png) center top no-repeat rgba($background-color, 0.6);
+  background-size: cover;
+  border-radius: 4px;
   overflow-y: auto;
+  padding: 40px;
 }

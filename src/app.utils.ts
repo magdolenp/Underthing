@@ -1,6 +1,6 @@
 export enum RoutePaths {
   Home = 'home',
-  Wiki = 'wiki',
+  World = 'world',
   Calculators = 'calculators',
   Test = 'test',
   About = 'about',

@@ -1,6 +1,6 @@
 @import 'variables';
 
-$navigation-height: 80px;
+$navigation-height: 56px;
 $navigation-margin: 4px;
 $navigation-item-width: 160px;
 $navigation-line-height: 2px;
@@ -11,7 +11,16 @@ $navigation-line-height: 2px;
   position: fixed;
   height: $navigation-height;
   width: 100%;
-  background-color: $background-color;
+  background: linear-gradient(
+    to right,
+    rgba($background-color, 0) 0%,
+    rgba($background-color, 0) 10%,
+    rgba($background-color, 1) 40%,
+    rgba($background-color, 1) 60%,
+    rgba($background-color, 0) 90%,
+    rgba($background-color, 0) 100%
+  );
+  opacity: 0.8;
 
   .navigation-menu {
     display: flex;
@@ -63,5 +72,16 @@ $navigation-line-height: 2px;
 
   &:hover {
     filter: drop-shadow(0 2px 2px rgba($secondary-dark-color, 0.4));
+  }
+}
+
+.active-link {
+  .label {
+    color: $secondary-color;
+    font-size: $font-h1-exp-size;
+  }
+
+  .line {
+    width: 100%;
   }
 }
