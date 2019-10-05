@@ -1,0 +1,20 @@
+.group {
+  display: flex;
+}
+
+.group-container {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin-right: 40px;
+}
+
+.add-row {
+  margin: 20px 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
