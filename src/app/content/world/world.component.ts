@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-world',
   templateUrl: './world.component.html',
-  styleUrls: ['./world.component.scss']
+  styleUrls: ['./world.component.scss'],
 })
-export class WorldComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class WorldComponent {
+  constructor() {}
 }

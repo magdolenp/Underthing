@@ -10,6 +10,7 @@ import { WorldComponent } from './content/world/world.component';
 import { CalculatorsComponent } from './content/calculators/calculators.component';
 import { TestingComponent } from './content/testing/testing.component';
 import { AboutComponent } from './content/about/about.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { AboutComponent } from './content/about/about.component';
     TestingComponent,
     AboutComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

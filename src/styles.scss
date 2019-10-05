@@ -9,9 +9,13 @@ body {
 
 * {
   font-family: $regular-font-family;
+  font-size: $font-basic-size;
   color: $font-color;
   margin: 0;
   padding: 0;
   outline: none;
   box-sizing: border-box;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
