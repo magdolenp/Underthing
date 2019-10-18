@@ -1,13 +1,24 @@
-.background-container {
-  height: 100%;
-  width: 100%;
-  background: url(~src/assets/bg.jpg) center top no-repeat black;
-  display: flex;
-  justify-content: center;
-  padding: 70px 0 10px;
+@import "variables";
 
-  .content {
-    height: 100%;
-    width: 100%;
+.app-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.app-container-right {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .mat-toolbar {
+    background-color: $card-background-color;
+    border-left: 1px $default-background-color solid;
   }
+}
+
+.app-content {
+  width: 100%;
+  height: 100%;
+  background-color: $default-background-color;
 }

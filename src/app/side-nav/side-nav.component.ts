@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {RoutePaths} from '../../app.utils';
+import { RoutePaths } from '../../app.utils';
 
 interface MenuSection {
   name: string;
@@ -7,18 +7,18 @@ interface MenuSection {
 }
 
 @Component({
-  selector: 'app-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss'],
+  selector: 'app-side-nav',
+  templateUrl: './side-nav.component.html',
+  styleUrls: ['./side-nav.component.scss']
 })
-export class NavigationComponent {
+export class SideNavComponent {
+
   readonly menuSections: MenuSection[] = [
     { name: 'Home', link: RoutePaths.Home },
     { name: 'World', link: RoutePaths.World },
     { name: 'Calculators', link: RoutePaths.Calculators },
-    { name: 'Test', link: RoutePaths.Test },
-    { name: 'About', link: RoutePaths.About },
+    { name: 'Monsters', link: RoutePaths.Monsters },
+    { name: 'Spells', link: RoutePaths.Spells },
   ];
 
-  constructor() {}
 }

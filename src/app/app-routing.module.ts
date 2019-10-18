@@ -3,9 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { RoutePaths } from '../app.utils';
 import { HomeComponent } from './content/home/home.component';
 import { CalculatorsComponent } from './content/calculators/calculators.component';
-import { TestingComponent } from './content/testing/testing.component';
-import { AboutComponent } from './content/about/about.component';
 import { WorldComponent } from './content/world/world.component';
+import { MonstersComponent } from './content/monsters/monsters.component';
+import { SpellsComponent } from './content/spells/spells.component';
 
 const routes: Routes = [
   {
@@ -24,14 +24,14 @@ const routes: Routes = [
     data: { title: 'Calculators' },
   },
   {
-    path: RoutePaths.Test,
-    component: TestingComponent,
-    data: { title: 'Test' },
+    path: RoutePaths.Monsters,
+    component: MonstersComponent,
+    data: { title: 'Monsters' },
   },
   {
-    path: RoutePaths.About,
-    component: AboutComponent,
-    data: { title: 'About' },
+    path: RoutePaths.Spells,
+    component: SpellsComponent,
+    data: { title: 'Spells' },
   },
   {
     path: '**',
