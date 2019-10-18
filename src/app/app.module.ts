@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { ContentComponent } from './content/content.component';
 import { HomeComponent } from './content/home/home.component';
 import { WorldComponent } from './content/world/world.component';
 import { CalculatorsComponent } from './content/calculators/calculators.component';
@@ -16,18 +15,20 @@ import {
   MatButtonModule,
   MatCheckboxModule,
   MatInputModule,
+  MatToolbarModule,
 } from '@angular/material';
+import { SideNavComponent } from './side-nav/side-nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    ContentComponent,
     HomeComponent,
     WorldComponent,
     CalculatorsComponent,
     TestingComponent,
     AboutComponent,
+    SideNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +39,7 @@ import {
     MatButtonModule,
     MatInputModule,
     MatCheckboxModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

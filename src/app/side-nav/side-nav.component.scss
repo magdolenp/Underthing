@@ -1,0 +1,10 @@
+@import "variables";
+
+.side-nav-container {
+  background-color: $card-background-color;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 100%;
+  width: 235px;
+}
