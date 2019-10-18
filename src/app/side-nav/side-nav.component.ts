@@ -17,8 +17,8 @@ export class SideNavComponent {
     { name: 'Home', link: RoutePaths.Home },
     { name: 'World', link: RoutePaths.World },
     { name: 'Calculators', link: RoutePaths.Calculators },
-    { name: 'Test', link: RoutePaths.Test },
-    { name: 'About', link: RoutePaths.About },
+    { name: 'Monsters', link: RoutePaths.Monsters },
+    { name: 'Spells', link: RoutePaths.Spells },
   ];
 
 }

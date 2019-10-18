@@ -1,7 +1,10 @@
 <div class="side-nav-container">
+  <img src="assets/dice.svg" class="dice-logo">
   <div class="menu-container">
-    <div class="menu-item" *ngFor="let item of menuSections">
-      {{item.name}}
+    <div class="menu-item" *ngFor="let item of menuSections"
+         [routerLink]="item.link"
+         routerLinkActive="active-link">
+      <span class="label">{{item.name}}</span>
     </div>
   </div>
 </div>
