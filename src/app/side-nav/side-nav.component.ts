@@ -4,6 +4,7 @@ import { RoutePaths } from '../../app.utils';
 interface MenuSection {
   name: string;
   link: RoutePaths;
+  icon: string;
 }
 
 @Component({
@@ -14,11 +15,10 @@ interface MenuSection {
 export class SideNavComponent {
 
   readonly menuSections: MenuSection[] = [
-    { name: 'Home', link: RoutePaths.Home },
-    { name: 'World', link: RoutePaths.World },
-    { name: 'Calculators', link: RoutePaths.Calculators },
-    { name: 'Monsters', link: RoutePaths.Monsters },
-    { name: 'Spells', link: RoutePaths.Spells },
+    { name: 'Home', link: RoutePaths.Home, icon: 'fab fa-d-and-d'},
+    { name: 'World', link: RoutePaths.World, icon: 'fas fa-globe-europe'},
+    { name: 'Calculators', link: RoutePaths.Calculators, icon: 'fas fa-calculator'},
+    { name: 'Monsters', link: RoutePaths.Monsters, icon: 'fas fa-dragon'},
+    { name: 'Spells', link: RoutePaths.Spells, icon: 'fas fa-scroll'},
   ];
-
 }

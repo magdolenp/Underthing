@@ -4,7 +4,8 @@
     <div class="menu-item" *ngFor="let item of menuSections"
          [routerLink]="item.link"
          routerLinkActive="active-link">
-      <span class="label">{{item.name}}</span>
+      <i class="menu-icon" [ngClass]="item.icon"></i>
+      <span class="menu-label">{{item.name}}</span>
     </div>
   </div>
 </div>
