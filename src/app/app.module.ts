@@ -11,7 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatButtonModule,
   MatCheckboxModule,
-  MatInputModule,
+  MatInputModule, MatSelectModule,
   MatToolbarModule,
 } from '@angular/material';
 import { SideNavComponent } from './side-nav/side-nav.component';
@@ -24,6 +24,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { REDUCERS } from './shared/store/reducers';
 import { EFFECTS } from './shared/store/effects';
+import { DiceThrowerComponent } from './content/calculators/dice-thrower/dice-thrower.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { EFFECTS } from './shared/store/effects';
     HomeComponent,
     WorldComponent,
     CalculatorsComponent,
+    DiceThrowerComponent,
     SideNavComponent,
     MonstersComponent,
     SpellsComponent,
@@ -52,6 +54,7 @@ import { EFFECTS } from './shared/store/effects';
     MatInputModule,
     MatCheckboxModule,
     MatToolbarModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

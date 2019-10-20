@@ -1,0 +1,23 @@
+@import 'variables';
+
+.dice-form {
+  display: flex;
+  align-items: center;
+
+  .dice-select {
+    width: 40px;
+  }
+}
+
+.throw-button {
+  margin: 0 20px;
+
+  .throw-button-icon {
+    color: $secondary-color;
+    font-size: 26px;
+  }
+}
+
+.result-label {
+  min-width: 30px;
+}

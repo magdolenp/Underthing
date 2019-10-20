@@ -1,0 +1,21 @@
+<div class="content-item">
+  <div [formGroup]="diceForm" class="dice-form">
+    <mat-select class="dice-select" formControlName="numberOfDices">
+      <mat-option *ngFor="let count of numberOfDices" [value]="count.value">
+        {{ count.viewValue }}
+      </mat-option>
+    </mat-select>
+    D
+    <mat-select class="dice-select" formControlName="diceType">
+      <mat-option *ngFor="let type of diceType" [value]="type.value">
+        {{ type.viewValue }}
+      </mat-option>
+    </mat-select>
+
+    <button class="throw-button" color="primary" mat-fab (click)="throw()">
+      <i class="fas fa-dice-d20 throw-button-icon"></i>
+    </button>
+
+    <div class="result-label">{{ result }}</div>
+  </div>
+</div>
