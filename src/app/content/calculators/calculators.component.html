@@ -1,47 +1,98 @@
-<div [formGroup]="groupsForm">
-  <div
-    formArrayName="groups"
-    *ngFor="let group of formData.controls; let i = index"
-  >
-    <div [formGroupName]="i" class="group">
-      <div class="group-container">
-        <mat-form-field class="example-full-width">
-          <input matInput formControlName="name" placeholder="Name">
-        </mat-form-field>
+<div class="content-container">
+  <div class="content-item">
+    <div [formGroup]="groupsForm">
+      <div
+        formArrayName="groups"
+        *ngFor="let group of formData.controls; let i = index"
+      >
+        <div [formGroupName]="i" class="group">
+          <div class="group-container">
+            <mat-form-field class="example-full-width">
+              <input matInput formControlName="name" placeholder="Name" />
+            </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <input matInput formControlName="numberOfEnemies" placeholder="Number of attackers" type="number">
-        </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input
+                matInput
+                formControlName="numberOfEnemies"
+                placeholder="Number of attackers"
+                type="number"
+              />
+            </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <input matInput formControlName="ac" placeholder="AC" type="number">
-        </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input
+                matInput
+                formControlName="ac"
+                placeholder="AC"
+                type="number"
+              />
+            </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <input matInput formControlName="bonus" placeholder="Bonus" type="number">
-        </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input
+                matInput
+                formControlName="bonus"
+                placeholder="Bonus"
+                type="number"
+              />
+            </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <input matInput formControlName="attackMin" placeholder="Attack min" type="number">
-        </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input
+                matInput
+                formControlName="attackMin"
+                placeholder="Attack min"
+                type="number"
+              />
+            </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <input matInput formControlName="attackMax" placeholder="Attack max" type="number">
-        </mat-form-field>
-      </div>
-      <div class="group-container">
-        <div class="row">
-          <button class="button" color="accent" mat-raised-button (click)="calculateDamage(i)" [disabled]="group.invalid">Calculate</button>
-          <button class="button" color="warn" mat-fab (click)="deleteGroup(i)" *ngIf="i !== 0">X</button>
+            <mat-form-field class="example-full-width">
+              <input
+                matInput
+                formControlName="attackMax"
+                placeholder="Attack max"
+                type="number"
+              />
+            </mat-form-field>
+          </div>
+          <div class="group-container">
+            <div class="row">
+              <button
+                class="button"
+                color="accent"
+                mat-raised-button
+                (click)="calculateDamage(i)"
+                [disabled]="group.invalid"
+              >
+                Calculate
+              </button>
+              <button
+                class="button"
+                color="warn"
+                mat-fab
+                (click)="deleteGroup(i)"
+                *ngIf="i !== 0"
+              >
+                X
+              </button>
+            </div>
+
+            <mat-form-field class="example-full-width">
+              <input matInput formControlName="result" placeholder="Result" />
+            </mat-form-field>
+          </div>
         </div>
-
-        <mat-form-field class="example-full-width">
-          <input matInput formControlName="result" placeholder="Result">
-        </mat-form-field>
       </div>
+
+      <button
+        class="button add-row"
+        color="primary"
+        mat-fab
+        (click)="addGroup()"
+      >
+        +
+      </button>
     </div>
   </div>
-
-  <button class="button add-row" color="primary" mat-fab (click)="addGroup()">+</button>
 </div>
-

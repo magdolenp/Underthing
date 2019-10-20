@@ -17,5 +17,53 @@ body {
   box-sizing: border-box;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.content-container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 20px;
+  align-items: center;
+  margin: $content-margin;
+
+  .content-item {
+    grid-column: 1 / span 3;
+    background-color: $card-background-color;
+    border-radius: $border-radius;
+    padding: $content-margin;
+
+    &.mini {
+      grid-column: auto;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+
+  .header-icon {
+    font-size: 24px;
+    color: $primary-color;
+    margin-right: 20px;
+  }
+}
+
+.title {
+  font-size: 20px;
+  color: $primary-color;
+}
+
+.section-title {
+  font-size: 18px;
+  color: $secondary-color;
+  margin-top: 1em;
+  margin-bottom: 0.4em;
+}

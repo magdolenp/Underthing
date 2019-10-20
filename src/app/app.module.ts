@@ -17,6 +17,13 @@ import {
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { MonstersComponent } from './content/monsters/monsters.component';
 import { SpellsComponent } from './content/spells/spells.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { environment } from '../environments/environment';
+import { StoreModule } from '@ngrx/store';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { REDUCERS } from './shared/store/reducers';
+import { EFFECTS } from './shared/store/effects';
 
 @NgModule({
   declarations: [
@@ -31,6 +38,13 @@ import { SpellsComponent } from './content/spells/spells.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    StoreModule.forRoot(REDUCERS),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
+    EffectsModule.forRoot(EFFECTS),
+    StoreRouterConnectingModule.forRoot(),
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
