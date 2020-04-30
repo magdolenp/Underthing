@@ -20,10 +20,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { environment } from '../environments/environment';
 import { StoreModule } from '@ngrx/store';
-import {
-  StoreRouterConnectingModule,
-  DefaultRouterStateSerializer,
-} from '@ngrx/router-store';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { REDUCERS } from './shared/store/reducers';
 import { EFFECTS } from './shared/store/effects';
 import { DiceThrowerComponent } from './content/calculators/dice-thrower/dice-thrower.component';
@@ -50,9 +47,7 @@ import { HttpClientModule } from '@angular/common/http';
       logOnly: environment.production,
     }),
     EffectsModule.forRoot(EFFECTS),
-    StoreRouterConnectingModule.forRoot({
-      serializer: DefaultRouterStateSerializer,
-    }),
+    StoreRouterConnectingModule.forRoot(),
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,

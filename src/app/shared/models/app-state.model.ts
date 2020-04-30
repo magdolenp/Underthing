@@ -1,14 +1,16 @@
 import { MonsterModel } from './monster.model';
+import { RouterReducerState } from '@ngrx/router-store/src/reducer';
 
 export type MonsterTableState = StoreStateSingle<MonsterModel[] | null>;
 export type MonsterState = StoreState<MonsterModel>;
 
 export interface AppStateModel {
   monsterTable: MonsterTableState;
+  router: RouterReducerState;
 }
 
 export interface ErrorModel {
-  path: string;
+  action: string;
   message: string;
   error: {
     error: string;

@@ -22,6 +22,7 @@ const reducer = createReducer(
   on(getAllMonstersActionSuccess, (state, { monsters }) => ({
     ...state,
     loading: false,
+    loaded: true,
     entity: filterArray(monsters || []),
   })),
 );
