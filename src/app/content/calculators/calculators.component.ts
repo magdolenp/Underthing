@@ -37,11 +37,11 @@ export class CalculatorsComponent {
     const form = (this.groupsForm.get('groups') as FormArray).at(
       index,
     ) as FormGroup;
-    const numberOfEnemies = Number(form.get('numberOfEnemies').value);
-    const ac = Number(form.get('ac').value);
-    const bonus = Number(form.get('bonus').value);
-    const attackMin = Number(form.get('attackMin').value);
-    const attackMax = Number(form.get('attackMax').value);
+    const numberOfEnemies = Number(form.get('numberOfEnemies')?.value);
+    const ac = Number(form.get('ac')?.value);
+    const bonus = Number(form.get('bonus')?.value);
+    const attackMin = Number(form.get('attackMin')?.value);
+    const attackMax = Number(form.get('attackMax')?.value);
 
     let attackers = 0;
     let damage = 0;
@@ -70,7 +70,7 @@ export class CalculatorsComponent {
     }
 
     form
-      .get('result')
+      .get('result')!
       .setValue(
         `ATTACK: ${attackers} / ${numberOfEnemies} (CRIT: ${crit} FAIL: ${fail}) -> DAMAGE: ${damage}`,
       );

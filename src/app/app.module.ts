@@ -8,12 +8,11 @@ import { WorldComponent } from './content/world/world.component';
 import { CalculatorsComponent } from './content/calculators/calculators.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {
-  MatButtonModule,
-  MatCheckboxModule,
-  MatInputModule, MatSelectModule,
-  MatToolbarModule,
-} from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { MonstersComponent } from './content/monsters/monsters.component';
 import { SpellsComponent } from './content/spells/spells.component';
@@ -21,7 +20,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { environment } from '../environments/environment';
 import { StoreModule } from '@ngrx/store';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import {
+  StoreRouterConnectingModule,
+  DefaultRouterStateSerializer,
+} from '@ngrx/router-store';
 import { REDUCERS } from './shared/store/reducers';
 import { EFFECTS } from './shared/store/effects';
 import { DiceThrowerComponent } from './content/calculators/dice-thrower/dice-thrower.component';
@@ -46,7 +48,9 @@ import { DiceThrowerComponent } from './content/calculators/dice-thrower/dice-th
       logOnly: environment.production,
     }),
     EffectsModule.forRoot(EFFECTS),
-    StoreRouterConnectingModule.forRoot(),
+    StoreRouterConnectingModule.forRoot({
+      serializer: DefaultRouterStateSerializer,
+    }),
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,

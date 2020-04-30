@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 const MAX_DICES = 20;
 
@@ -33,7 +33,9 @@ export class DiceThrowerComponent {
     .map(item => ({ value: item, viewValue: String(item) }));
   readonly diceType: SelectInterface<number>[] = [
     ...Object.values(DICES).filter(dice => typeof dice === 'number'),
-  ].map(item => ({ value: item, viewValue: String(item) }));
+  ].map(item => ({ value: item, viewValue: String(item) })) as SelectInterface<
+    number
+  >[];
 
   constructor(private readonly fb: FormBuilder) {
     this.diceForm = this.fb.group({
