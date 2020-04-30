@@ -25,6 +25,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { REDUCERS } from './shared/store/reducers';
 import { EFFECTS } from './shared/store/effects';
 import { DiceThrowerComponent } from './content/calculators/dice-thrower/dice-thrower.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { DiceThrowerComponent } from './content/calculators/dice-thrower/dice-th
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     StoreModule.forRoot(REDUCERS),
     StoreDevtoolsModule.instrument({
       maxAge: 25,

@@ -1,4 +1,5 @@
 import { MonsterState } from '../../models/app-state.model';
+import { Action } from '@ngrx/store';
 
 const initialState: MonsterState = {
   entities: {},
@@ -9,7 +10,7 @@ const initialState: MonsterState = {
 
 export function monsterReducer(
   state: MonsterState = initialState,
-  action: null,
+  action: Action,
 ): MonsterState {
   return state;
 }

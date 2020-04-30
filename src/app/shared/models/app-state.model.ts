@@ -1,15 +1,14 @@
-export type MonsterState = StoreState<string[]>;
+import { MonsterModel } from './monster.model';
+
+export type MonsterTableState = StoreStateSingle<MonsterModel[] | null>;
+export type MonsterState = StoreState<MonsterModel>;
 
 export interface AppStateModel {
-  monster: MonsterState;
+  monsterTable: MonsterTableState;
 }
 
 export interface ErrorModel {
-  status: number;
-  statusText: string;
-  url: string;
-  ok: boolean;
-  name: string;
+  path: string;
   message: string;
   error: {
     error: string;
@@ -26,4 +25,8 @@ interface BasicStateProps<T, U = ErrorModel> {
 
 interface StoreState<T, U = void> extends BasicStateProps<U> {
   entities: { [id: string]: T };
+}
+
+interface StoreStateSingle<T, U = void> extends BasicStateProps<U> {
+  entity?: T;
 }

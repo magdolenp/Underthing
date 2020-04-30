@@ -1,7 +1,7 @@
 import { ActionReducerMap } from '@ngrx/store';
 import { AppStateModel } from '../../models/app-state.model';
-import { monsterReducer } from './monster.reducer';
+import { monsterTableReducer } from './monster-table.reducer';
 
 export const REDUCERS: ActionReducerMap<AppStateModel> = {
-  monster: monsterReducer,
+  monsterTable: monsterTableReducer,
 };
