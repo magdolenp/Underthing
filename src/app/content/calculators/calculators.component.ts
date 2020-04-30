@@ -33,19 +33,15 @@ export class CalculatorsComponent {
     return this.groupsForm.get('groups') as FormArray;
   }
 
-  // tslint:disable-next-line:cyclomatic-complexity
   calculateDamage(index: number): void {
     const form = (this.groupsForm.get('groups') as FormArray).at(
       index,
     ) as FormGroup;
-    const defaultValue = { value: 0 };
-    const numberOfEnemies = Number(
-      (form.get('numberOfEnemies') || defaultValue).value,
-    );
-    const ac = Number((form.get('ac') || defaultValue).value);
-    const bonus = Number((form.get('bonus') || defaultValue).value);
-    const attackMin = Number((form.get('attackMin') || defaultValue).value);
-    const attackMax = Number((form.get('attackMax') || defaultValue).value);
+    const numberOfEnemies = Number(form.get('numberOfEnemies')?.value);
+    const ac = Number(form.get('ac')?.value);
+    const bonus = Number(form.get('bonus')?.value);
+    const attackMin = Number(form.get('attackMin')?.value);
+    const attackMax = Number(form.get('attackMax')?.value);
 
     let attackers = 0;
     let damage = 0;
@@ -73,6 +69,7 @@ export class CalculatorsComponent {
       }
     }
 
+    // @ts-ignore
     form
       .get('result')
       .setValue(

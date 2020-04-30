@@ -1,5 +1,5 @@
 import { MonsterState } from '../../models/app-state.model';
-import { Action } from '@ngrx/store';
+import { Action, createReducer } from '@ngrx/store';
 
 const initialState: MonsterState = {
   entities: {},
@@ -7,10 +7,11 @@ const initialState: MonsterState = {
   loading: false,
   loaded: false,
 };
+const reducer = createReducer(initialState);
 
 export function monsterReducer(
   state: MonsterState = initialState,
   action: Action,
 ): MonsterState {
-  return state;
+  return reducer(state, action);
 }
