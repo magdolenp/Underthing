@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+const CRIT_ROLL = 20;
+
 @Component({
   selector: 'app-calculators',
   templateUrl: './calculators.component.html',
@@ -27,7 +29,7 @@ export class CalculatorsComponent {
     });
   }
 
-  get formData() {
+  get formData(): FormArray {
     return this.groupsForm.get('groups') as FormArray;
   }
 
@@ -46,10 +48,11 @@ export class CalculatorsComponent {
     let crit = 0;
     let fail = 0;
 
+    // tslint:disable-next-line:no-loop-statement
     for (let i = 0; i < numberOfEnemies; i++) {
       const attackChance: number = this.dc20() + bonus;
       let isCrit = false;
-      if (attackChance === 20) {
+      if (attackChance === CRIT_ROLL) {
         crit++;
         isCrit = true;
       } else if (attackChance === 1) {
@@ -69,16 +72,7 @@ export class CalculatorsComponent {
     form
       .get('result')
       .setValue(
-        'ATTACK: ' +
-          attackers +
-          ' / ' +
-          numberOfEnemies +
-          ' (CRIT: ' +
-          crit +
-          ' FAIL: ' +
-          fail +
-          ') -> DAMAGE: ' +
-          damage,
+        `ATTACK: ${attackers} / ${numberOfEnemies} (CRIT: ${crit} FAIL: ${fail}) -> DAMAGE: ${damage}`,
       );
   }
 
@@ -101,7 +95,7 @@ export class CalculatorsComponent {
   }
 
   dc20(): number {
-    return Math.floor(Math.random() * 20 + 1);
+    return Math.floor(Math.random() * CRIT_ROLL + 1);
   }
 
   damage(min: number, max: number): number {

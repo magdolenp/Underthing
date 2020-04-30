@@ -5,6 +5,7 @@ html,
 body {
   height: 100%;
   overflow: hidden;
+  margin: 0;
 }
 
 * {
@@ -17,13 +18,11 @@ body {
   box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+/* stylelint-disable-next-line selector-max-type */
+input,
+button {
+  border: none;
+  background: none;
 }
 
 .content-container {
