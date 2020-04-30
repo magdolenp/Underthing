@@ -69,8 +69,9 @@ export class CalculatorsComponent {
       }
     }
 
+    // @ts-ignore
     form
-      .get('result')!
+      .get('result')
       .setValue(
         `ATTACK: ${attackers} / ${numberOfEnemies} (CRIT: ${crit} FAIL: ${fail}) -> DAMAGE: ${damage}`,
       );
