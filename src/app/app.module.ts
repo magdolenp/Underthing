@@ -25,6 +25,7 @@ import { REDUCERS } from './shared/store/reducers';
 import { EFFECTS } from './shared/store/effects';
 import { DiceThrowerComponent } from './content/calculators/dice-thrower/dice-thrower.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DiceComponent } from './content/dice/dice.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     WorldComponent,
     CalculatorsComponent,
+    DiceComponent,
     DiceThrowerComponent,
     SideNavComponent,
     MonstersComponent,

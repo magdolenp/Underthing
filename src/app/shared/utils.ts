@@ -1,3 +1,5 @@
+import { DiceEnum } from './enums/dice.enum';
+
 export function exists<T>(value: T | null | undefined): value is T {
   return value != null;
 }
@@ -20,3 +22,8 @@ export function appendPathToUrl(url: string, path: string): string {
   return `${url.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
 }
 
+export const rollDice = (diceType: DiceEnum): number =>
+  Math.floor(Math.random() * diceType + 1);
+
+export const displayTime = (date: Date): string =>
+  `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;

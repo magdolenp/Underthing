@@ -1,12 +1,16 @@
 import { MonsterModel } from './monster.model';
 import { RouterReducerState } from '@ngrx/router-store/src/reducer';
+import { DiceModel } from './dice.model';
+import { EntityState } from '@ngrx/entity';
 
 export type MonsterTableState = StoreStateSingle<MonsterModel[] | null>;
+export type DiceState = EntityStoreState<DiceModel>;
 export type MonsterState = StoreState<MonsterModel>;
 
 export interface AppStateModel {
   monsterTable: MonsterTableState;
   router: RouterReducerState;
+  dice: DiceState;
 }
 
 export interface ErrorModel {
@@ -31,4 +35,8 @@ interface StoreState<T, U = void> extends BasicStateProps<U> {
 
 interface StoreStateSingle<T, U = void> extends BasicStateProps<U> {
   entity?: T;
+}
+
+interface EntityStoreState<T, U = void> extends BasicStateProps<U> {
+  data: EntityState<T>;
 }

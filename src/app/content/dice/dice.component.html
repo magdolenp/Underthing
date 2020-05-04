@@ -1,0 +1,53 @@
+<div class="content-container">
+  <div class="content-item">
+    <div class="dice-container">
+      <div
+        *ngFor="let dice of dices; let i = index"
+        class="dice-button"
+        (click)="rollDice(dice.type, i)"
+      >
+        <img
+          class="dice-icon"
+          [@rotatedState]="rollingIndex === i ? 'rotated' : 'default'"
+          [src]="dice.icon"
+          alt="Dice icon"
+        />
+        <div class="dice-text">{{ dice.text }}</div>
+      </div>
+    </div>
+  </div>
+
+  <ng-container *ngIf="diceRollsHistory$ | async as rolls">
+    <div class="content-item" *ngIf="rolls.length">
+      <table
+        mat-table
+        [dataSource]="rolls"
+        class="rolls-table"
+        *ngIf="rolls.length"
+      >
+        <!-- Position Column -->
+        <ng-container matColumnDef="type">
+          <th mat-header-cell *matHeaderCellDef>Type</th>
+          <td mat-cell *matCellDef="let element">D{{ element.type }}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="value">
+          <th mat-header-cell *matHeaderCellDef>Value</th>
+          <td mat-cell *matCellDef="let element">{{ element.value }}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="timestamp">
+          <th mat-header-cell *matHeaderCellDef>Timestamp</th>
+          <td mat-cell *matCellDef="let element">
+            {{ displayTime(element.timestamp) }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+  </ng-container>
+</div>

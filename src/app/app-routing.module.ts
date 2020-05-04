@@ -24,6 +24,12 @@ const routes: Routes = [
     data: { title: 'Calculators' },
   },
   {
+    path: RoutePaths.Dice,
+    loadChildren: () =>
+      import('./content/dice/dice.module').then(m => m.DiceModule),
+    data: { title: 'Dices' },
+  },
+  {
     path: RoutePaths.Monsters,
     component: MonstersComponent,
     data: { title: 'Monsters' },

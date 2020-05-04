@@ -1,0 +1,75 @@
+@import 'variables';
+
+.dice-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dice-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #3e424c;
+  border: 2px solid $primary-color;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 120px;
+  max-width: 200px;
+  flex-basis: 20%;
+  padding: 10px;
+  margin: 10px;
+
+  .dice-icon {
+    width: 100%;
+  }
+
+  .dice-text {
+    font-size: 18px;
+    color: $primary-color;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  &:hover {
+    background-color: rgba($primary-color, 0.01);
+    box-shadow: 0 0 8px 1px rgba($primary-color, 0.6);
+    transition: box-shadow 160ms ease, background-color 160ms ease;
+  }
+
+  &:active {
+    background-color: rgba($primary-color, 0.2);
+    transition: background-color 80ms ease;
+  }
+}
+
+.content-item {
+  background-color: #292d39;
+}
+
+.dice-roll-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rolls-table {
+  width: 100%;
+  background-color: $card-background-color;
+  color: white;
+
+  .mat-row {
+    &:first-child {
+      background-color: $primary-color;
+    }
+  }
+
+  .mat-cell {
+    color: $secondary-color;
+    border-bottom-color: rgba($primary-color, 0.1);
+  }
+
+  .mat-header-cell {
+    color: $font-color;
+    border-bottom-color: rgba($primary-color, 0.1);
+  }
+}
