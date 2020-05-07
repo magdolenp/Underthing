@@ -1,0 +1,33 @@
+@import 'variables';
+.table-container {
+  padding: 20px;
+}
+
+.mat-row {
+  cursor: pointer;
+}
+
+.mat-table,
+.mat-paginator {
+  width: 100%;
+  background-color: $card-background-color;
+}
+
+.mat-header-cell::ng-deep {
+  color: $primary-color !important;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-cell,
+.mat-paginator {
+  color: $font-color;
+}
+
+td,
+th {
+  width: 25%;
+}

@@ -6,6 +6,7 @@ import { CalculatorsComponent } from './content/calculators/calculators.componen
 import { WorldComponent } from './content/world/world.component';
 import { MonstersComponent } from './content/monsters/monsters.component';
 import { SpellsComponent } from './content/spells/spells.component';
+import { MonsterDetailComponent } from './content/monsters/monster-detail/monster-detail.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,11 @@ const routes: Routes = [
     path: RoutePaths.Monsters,
     component: MonstersComponent,
     data: { title: 'Monsters' },
+  },
+  {
+    path: `${RoutePaths.Monsters}/:slug`,
+    component: MonsterDetailComponent,
+    data: { title: 'Monster detail' },
   },
   {
     path: RoutePaths.Spells,

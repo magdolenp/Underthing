@@ -23,6 +23,7 @@ $hover-color: #202330;
   display: flex;
   align-items: center;
   user-select: none;
+  color: $font-color;
 
   &.active-link {
     background-color: rgba($default-background-color, 0.8);
