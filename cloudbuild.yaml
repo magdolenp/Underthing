@@ -1,0 +1,14 @@
+steps:
+  # Install
+  - name: 'gcr.io/cloud-builders/npm:node-10.10.0'
+    args: ['install']
+
+  # Build
+  - name: 'gcr.io/cloud-builders/npm:node-10.10.0'
+    args: ['run', 'build-prod']
+
+  # Deploy
+  - name: 'gcr.io/underthing/firebase'
+    args: ['deploy']
+
+timeout: 300s
