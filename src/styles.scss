@@ -11,7 +11,6 @@ body {
 * {
   font-family: $regular-font-family;
   font-size: $font-basic-size;
-  color: $font-color;
   margin: 0;
   padding: 0;
   outline: none;
@@ -65,4 +64,26 @@ button {
   color: $secondary-color;
   margin-top: 1em;
   margin-bottom: 0.4em;
+}
+
+.mat-input-element {
+  color: $font-color;
+}
+
+.mat-form-field-label,
+.mat-select-value,
+.mat-select-arrow,
+.mat-paginator-icon {
+  /*change color of label*/
+  color: $font-color !important;
+}
+
+.mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: $primary-color !important;
+}
+
+.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: $font-color !important;
 }

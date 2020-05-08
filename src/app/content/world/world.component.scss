@@ -1,5 +1,9 @@
 @import 'variables';
 
+.content-container {
+  color: $font-color;
+}
+
 .map {
   height: 400px;
   float: right;

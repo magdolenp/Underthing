@@ -25,6 +25,10 @@ import { REDUCERS } from './shared/store/reducers';
 import { EFFECTS } from './shared/store/effects';
 import { DiceThrowerComponent } from './content/calculators/dice-thrower/dice-thrower.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MonsterDetailComponent } from './content/monsters/monster-detail/monster-detail.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
     SideNavComponent,
     MonstersComponent,
     SpellsComponent,
+    MonsterDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +61,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatCheckboxModule,
     MatToolbarModule,
     MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

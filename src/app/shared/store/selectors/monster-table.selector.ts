@@ -9,3 +9,8 @@ export const $monsterTableLoaded = createSelector(
   $monsterTableState,
   ({ loaded }): boolean => loaded || false,
 );
+
+export const $monsterTableData = createSelector(
+  $monsterTableState,
+  ({ entity }) => entity,
+);
