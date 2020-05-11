@@ -20,6 +20,7 @@ import { Store, select } from '@ngrx/store';
 import { AppStateModel } from '../../models/app-state.model';
 import { ROUTER_NAVIGATED } from '@ngrx/router-store';
 import { TableModel } from '../../models/table.model';
+import { RoutePaths } from '../../../../app.utils';
 
 const API_URL = 'https://api.open5e.com';
 
@@ -33,7 +34,7 @@ export class MonsterTableEffect {
           payload: {
             event: { url },
           },
-        }) => url === '/monsters',
+        }) => url === `/${RoutePaths.Monsters}`,
       ),
       map(() => getAllMonstersAction()),
     ),

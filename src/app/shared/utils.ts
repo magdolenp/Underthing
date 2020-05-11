@@ -1,4 +1,5 @@
 import { DiceEnum } from './enums/dice.enum';
+import { SpellModel, ApiSpellTable } from './models/spell.model';
 
 export function exists<T>(value: T | null | undefined): value is T {
   return value != null;
@@ -27,3 +28,22 @@ export const rollDice = (diceType: DiceEnum): number =>
 
 export const displayTime = (date: Date): string =>
   `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+
+export type Modify<T, R> = Omit<T, keyof R> & R;
+
+export function normalizeSpells(
+  spells: Partial<ApiSpellTable[]>,
+): Partial<SpellModel[]> {
+  if (spells == null) {
+    return [];
+  }
+  return (spells || []).map(value => ({
+    ...value,
+    ...(value && value.dnd_class != null
+      ? { dnd_class: value.dnd_class.replace(/\s+/g, '').split(',') }
+      : {}),
+    ...(value && value.components != null
+      ? { components: value.components.replace(/\s+/g, '').split(',') }
+      : {}),
+  })) as Partial<SpellModel[]>;
+}
