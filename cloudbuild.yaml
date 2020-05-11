@@ -1,0 +1,14 @@
+steps:
+  # Install
+  - name: 'node:12'
+    args: ['install']
+
+  # Build
+  - name: 'node:12'
+    args: ['run', 'build-prod']
+
+  # Deploy
+  - name: 'gcr.io/underthing/firebase'
+    args: ['deploy']
+
+timeout: 300s
