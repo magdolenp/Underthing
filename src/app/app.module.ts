@@ -29,6 +29,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MonsterDetailComponent } from './content/monsters/monster-detail/monster-detail.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { MonsterDetailComponent } from './content/monsters/monster-detail/monste
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

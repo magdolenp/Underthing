@@ -9,7 +9,7 @@ import { MatTableModule } from '@angular/material/table';
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild([{ path: '', component: DiceComponent }]),
+    RouterModule.forChild([{ path: '**', component: DiceComponent }]),
     StoreModule.forFeature('dice', diceReducer),
     MatTableModule,
   ],

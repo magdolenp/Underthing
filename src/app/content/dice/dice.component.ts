@@ -21,6 +21,8 @@ interface DiceButtonModel {
   text: string;
 }
 
+const ANIMATION_TIME_IN_MS = 600;
+
 @Component({
   selector: 'app-calculators',
   templateUrl: './dice.component.html',
@@ -29,8 +31,11 @@ interface DiceButtonModel {
     trigger('rotatedState', [
       state('default', style({ transform: 'rotate(0)' })),
       state('rotated', style({ transform: 'rotate(720deg)' })),
-      transition('rotated => default', animate(0)),
-      transition('default => rotated', animate('600ms ease-in-out')),
+      transition(
+        'default => rotated',
+        animate(ANIMATION_TIME_IN_MS + 'ms ease-in-out'),
+      ),
+      transition('* <=> *', animate(0)),
     ]),
   ],
 })
@@ -71,15 +76,22 @@ export class DiceComponent {
       text: 'D20',
     },
   ];
-  rollingIndex = -1;
+  animations = new Array(this.dices.length).fill(false);
 
   constructor(private readonly store: Store<AppStateModel>) {}
 
   // @ts-ignore
-  rollDice(type: DiceEnum, index: number): void {
-    this.rollingIndex = index;
+  rollDice(type: DiceEnum, diceIndex: number): void {
+    this.animations = this.animations.map((_, index) => index === diceIndex);
     this.store.dispatch(
       diceRollAction({ diceType: type, timestamp: new Date() }),
+    );
+    setTimeout(
+      () =>
+        (this.animations = this.animations.map((item, index) =>
+          index === diceIndex ? false : item,
+        )),
+      ANIMATION_TIME_IN_MS,
     );
   }
 

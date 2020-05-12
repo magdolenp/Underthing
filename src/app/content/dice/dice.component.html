@@ -8,7 +8,7 @@
       >
         <img
           class="dice-icon"
-          [@rotatedState]="rollingIndex === i ? 'rotated' : 'default'"
+          [@rotatedState]="animations[i] ? 'rotated' : 'default'"
           [src]="dice.icon"
           alt="Dice icon"
         />

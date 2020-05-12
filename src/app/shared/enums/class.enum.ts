@@ -1,13 +1,4 @@
-export enum RoutePaths {
-  Home = 'home',
-  World = 'world',
-  Classes = 'classes',
-  Calculators = 'calculators',
-  Dice = 'dice',
-  Monsters = 'monsters',
-  Spells = 'spells',
-
-  // Classes section
+export enum ClassEnum {
   Barbarian = 'barbarian',
   Bard = 'bard',
   Cleric = 'cleric',

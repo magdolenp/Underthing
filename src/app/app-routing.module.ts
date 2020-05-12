@@ -20,6 +20,12 @@ const routes: Routes = [
     data: { title: 'World' },
   },
   {
+    path: `${RoutePaths.Classes}/:class`,
+    loadChildren: () =>
+      import('./content/classes/classes.module').then(m => m.ClassesModule),
+    data: { title: 'Classes' },
+  },
+  {
     path: RoutePaths.Calculators,
     component: CalculatorsComponent,
     data: { title: 'Calculators' },

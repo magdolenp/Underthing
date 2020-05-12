@@ -1,11 +1,37 @@
 <div class="side-nav-container">
-  <img src="assets/dice.svg" class="dice-logo" alt="dice-logo">
+  <img src="assets/dice.svg" class="dice-logo" alt="dice-logo" />
   <div class="menu-container">
-    <div class="menu-item" *ngFor="let item of menuSections"
-         [routerLink]="item.link"
-         routerLinkActive="active-link">
-      <i class="menu-icon" [ngClass]="item.icon"></i>
-      <span class="menu-label">{{item.name}}</span>
+    <div *ngFor="let menu of menuSections">
+      <ng-container *ngIf="menu.subsection; else noSubsections">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <div class="menu-item">
+              <i class="menu-icon" [ngClass]="menu.icon"></i>
+              <span class="menu-label">{{ menu.name }}</span>
+            </div>
+          </mat-expansion-panel-header>
+
+          <div
+            class="menu-item submenu"
+            [routerLink]="subsection.link"
+            routerLinkActive="active-link"
+            *ngFor="let subsection of menu.subsection"
+          >
+            <span class="menu-label">{{ subsection.name }}</span>
+          </div>
+        </mat-expansion-panel>
+      </ng-container>
+
+      <ng-template #noSubsections>
+        <div
+          class="menu-item"
+          [routerLink]="menu.link"
+          routerLinkActive="active-link"
+        >
+          <i class="menu-icon" [ngClass]="menu.icon"></i>
+          <span class="menu-label">{{ menu.name }}</span>
+        </div>
+      </ng-template>
     </div>
   </div>
 </div>
