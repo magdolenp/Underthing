@@ -1,14 +1,29 @@
 steps:
-  # Install
-  - name: 'node:12'
-    args: ['install']
+  - id: install
+    name: node:12.16.3
+    entrypoint: npm
+    args:
+      - 'install'
 
-  # Build
-  - name: 'node:12'
-    args: ['run', 'build-prod']
+  - id: build
+    name: node:12.16.3
+    entrypoint: npm
+    waitFor:
+      - install
+    args:
+      - 'run'
+      - 'build'
 
-  # Deploy
-  - name: 'gcr.io/underthing/firebase'
-    args: ['deploy']
+  - id: deploy
+    name: gcr.io/underthing/firebase
+    entrypoint: /bin/bash
+    waitFor:
+      - build
+    args:
+      - '-c'
+      - >-
+        set -ex;
+        firebase use default --token ${_FIREBASE_TOKEN};
+        firebase deploy --token ${_FIREBASE_TOKEN};
 
-timeout: 300s
+timeout: 600s
