@@ -22,6 +22,7 @@ steps:
     args:
       - 'run'
       - 'firebase'
-      - 'deploy --token ${_FIREBASE_TOKEN}'
+      - 'deploy'
+      - '--token ${_FIREBASE_TOKEN}'
 
 timeout: 900s
