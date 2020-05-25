@@ -16,7 +16,7 @@ steps:
 
   - id: deploy
     name: node:12.16.3
-    entrypoint: /bin/bash
+    entrypoint: npm
     waitFor:
       - build
     args:
