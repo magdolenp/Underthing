@@ -15,7 +15,6 @@ steps:
       - 'build'
 
   - id: deploy
-    name: gcr.io/underthing/firebase
     entrypoint: /bin/bash
     waitFor:
       - build
