@@ -26,4 +26,4 @@ steps:
         firebase use default --token ${_FIREBASE_TOKEN};
         firebase deploy --token ${_FIREBASE_TOKEN};
 
-timeout: 600s
+timeout: 900s
