@@ -15,14 +15,13 @@ steps:
       - 'build'
 
   - id: deploy
+    name: node:12.16.3
     entrypoint: /bin/bash
     waitFor:
       - build
     args:
-      - '-c'
-      - >-
-        set -ex;
-        firebase use default --token ${_FIREBASE_TOKEN};
-        firebase deploy --token ${_FIREBASE_TOKEN};
+      - 'run'
+      - 'firebase'
+      - 'deploy --token ${_FIREBASE_TOKEN}'
 
 timeout: 900s

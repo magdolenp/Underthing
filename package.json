@@ -8,6 +8,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "build-prod": "npm run build -- --prod",
+    "firebase": "firebase",
     "deploy": "firebase deploy --only hosting",
     "lint": "npm run lint:ts && npm run lint:html && npm run lint:scss",
     "lint:ts": "npx ng lint",
