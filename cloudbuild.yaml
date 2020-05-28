@@ -6,11 +6,16 @@ steps:
       - 'install'
 
   - id: version
-    name: ubuntu
+    name: gcr.io/cloud-builders/gcloud
     entrypoint: /bin/bash
     waitFor:
       - install
-    args: ['bash', './tag-version.sh']
+    args:
+      - '-c'
+      - |-
+        set -ex;
+        chmod +x tag-version.sh
+        ./tag-version.sh;
 
   - id: build
     name: node:12.16.3
