@@ -13,9 +13,7 @@ steps:
     args:
       - '-c'
       - |-
-        set -ex;
-        chmod +x tag-version.sh
-        ./tag-version.sh;
+        sed -i "/version/c\  version: '$COMMIT_SHA'," src/environments/environment.prod.ts
 
   - id: build
     name: node:12.16.3
