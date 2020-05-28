@@ -13,6 +13,7 @@ steps:
     args:
       - '-c'
       - |-
+        set -ex;
         sed -i "/version/c\  version: '$COMMIT_SHA'," src/environments/environment.prod.ts
 
   - id: build
