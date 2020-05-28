@@ -6,7 +6,8 @@ steps:
       - 'install'
 
   - id: version
-    name: version
+    name: gcr.io/cloud-builders/gcloud
+    entrypoint: /bin/bash
     waitFor:
       - install
     args: ['bash', './tag-version.sh']
