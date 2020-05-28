@@ -23,7 +23,7 @@ steps:
       - version
     args:
       - 'run'
-      - 'build'
+      - 'build-prod'
 
   - id: deploy
     name: gcr.io/underthing/firebase
