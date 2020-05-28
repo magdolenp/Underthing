@@ -6,7 +6,7 @@ steps:
       - 'install'
 
   - id: version
-    name: gcr.io/cloud-builders/gcloud
+    name: ubuntu
     entrypoint: /bin/bash
     waitFor:
       - install
