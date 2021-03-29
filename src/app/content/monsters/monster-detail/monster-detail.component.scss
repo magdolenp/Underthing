@@ -1,0 +1,88 @@
+@import '../../../../variables';
+$monster-img-container-width: 200px;
+
+.content-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.main-content {
+  flex-basis: 100%;
+  position: relative;
+}
+
+.section-title {
+  margin-top: 10px;
+}
+
+.highlight-text {
+  font-weight: bold;
+}
+
+.highlight {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  color: #6b6161;
+}
+
+.side-container {
+  width: 400px;
+}
+
+.monster-stats {
+  margin-bottom: 20px;
+}
+
+.stats-modifier {
+  flex-direction: column;
+}
+
+.stats {
+  text-align: center;
+  color: #6b6161;
+  font-size: 20px;
+}
+.monster-title {
+  margin-bottom: 10px;
+}
+
+.monster-description {
+  font-style: italic;
+  color: #6b6161;
+}
+
+.stats-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.table-class {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  border-spacing: 20px 20px 10px 0px;
+  color: #931f1d;
+}
+
+.monster-icon {
+  width: 150px;
+}
+
+.monster-image {
+  width: $monster-img-container-width;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+}
+
+.ability-description {
+  width: calc(100% - #{$monster-img-container-width});
+}

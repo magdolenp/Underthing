@@ -1,1 +1,140 @@
-<p>monster-detail works!</p>
+<div class="content-container">
+  <div class="content-item main-content">
+    <div class="monster-image">
+      <img
+        class="monster-icon"
+        src="assets/grimace-solid.svg"
+        alt="placeholder"
+      />
+      <div></div>
+    </div>
+    <div class="title monster-title">
+      Adult Wind Dragon
+      <span class="monster-description">
+        Huge dragon, chaotic neutral
+      </span>
+    </div>
+    <div>
+      <span class="highlight-text">Armor Class</span>
+      19
+      <span class="highlight-text">Hit Points</span>
+      237 (19d12+114)
+      <span class="highlight-text">Speed Walk</span>
+      40ft. Fly 90ft.
+      <span class="highlight-text">Challenge</span>
+      17 (18,000 XP)
+    </div>
+    <div class="section-title">
+      Multiattack
+    </div>
+    <div class="ability-description">
+      The wind dragon can use its Frightful Presence and then makes three
+      attacks: one with its bite, and two with its claws. The wind dragon can
+      use its Frightful Presence and then makes three attacks: one with its
+      bite, and two with its claws. The wind dragon can use its Frightful
+      Presence and then makes three attacks: one with its bite, and two with its
+      claws.
+    </div>
+    <div class="section-title">
+      Bite
+    </div>
+    <div class="ability-description">
+      Melee Weapon Attack: +13 to hit, reach 10 ft., one target. Hit: 18 (2d10 +
+      7) piercing damage.
+    </div>
+    <div class="section-title">
+      Claw
+    </div>
+    <div class="ability-description">
+      Melee Weapon Attack: +13 to hit, reach 5 ft., one target. Hit: 14 (2d6 +
+      7) slashing damage.
+    </div>
+    <div class="section-title">
+      Tail
+    </div>
+    <div>
+      Melee Weapon Attack: +13 to hit, reach 15 ft., one target. Hit: 16 (2d8 +
+      7) bludgeoning damage.
+    </div>
+    <div class="section-title">
+      Breath of Gales (Recharge 5-6)
+    </div>
+    <div>
+      The dragon exhales a blast of wind in a 60-foot cone. Each creature in
+      that cone takes 27 (5d10) bludgeoning damage and is pushed 25 feet away
+      from the dragon and knocked prone; a successful DC 20 Strength saving
+      throw halves the damage and prevents being pushed (but not being knocked
+      prone). All flames in the cone are extinguished.
+    </div>
+    <div class="section-title">
+      Frightful Presence
+    </div>
+    <div>
+      Each creature of the dragon's choice that is within 120 feet of the dragon
+      and aware of it must succeed on a DC 18 Wisdom saving throw or become
+      frightened for 1 minute. A creature repeats the saving throw at the end of
+      its turn, ending the effect on itself on a success. If a creature's saving
+      throw is successful or the effect ends for it, the creature is immune to
+      the dragon's Frightful Presence for the next 24 hours.
+    </div>
+    <div class="section-title">
+      Detect
+    </div>
+    <div>
+      The dragon makes a Wisdom (Perception) check.
+    </div>
+    <div class="section-title">
+      Tail Attack
+    </div>
+    <div>
+      The dragons makes a tail attack.
+    </div>
+    <div class="section-title">
+      Wing Attack (Costs 2 Actions)
+    </div>
+    <div>
+      The dragon beats its wings. Each creature within 10 feet of the dragon
+      must succeed on a DC 21 Dexterity saving throw or take 14 (2d6 + 7)
+      bludgeoning damage and be knocked prone. The dragon can then fly up to
+      half its flying speed.
+    </div>
+  </div>
+  <div class="side-container">
+    <div class="content-item monster-stats">
+      <div class="stats-table">
+        <div *ngFor="let stat of monsterStat" class="stats-block">
+          <span class="stats">
+            {{ stat.value }}
+            <br />
+            ({{ statModifier(stat.value) }})
+          </span>
+          <span class="highlight">
+            {{ stat.key }}
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="content-item monster-stats-details">
+      <div class="section-title">Saving Throws</div>
+      <div>
+        Str + 7, Dex + 10, Con + 12, Int + 3, Wis + 8, Cha + 10
+      </div>
+      <div class="section-title">Skills</div>
+      <div>
+        Acrobatics +10, Intimidation +10, Perception +14, Stealth +10
+      </div>
+      <div class="section-title">Damage Immunities</div>
+      <div>
+        lightning
+      </div>
+      <div class="section-title">Senses</div>
+      <div>
+        blindsight 10 ft., darkvision 60 ft., passive Perception 24
+      </div>
+      <div class="section-title">Languages</div>
+      <div>
+        Common, Draconic, Primordial
+      </div>
+    </div>
+  </div>
+</div>
